@@ -1,0 +1,52 @@
+{
+  "features": {
+    "id": ["passenger_id"],
+    "target": ["survived"],
+    "train": [
+      "fare",
+      "family_size",
+      "is_alone",
+      "age_cut_0",
+      "age_cut_1",
+      "age_cut_2",
+      "age_cut_3",
+      "age_cut_4",
+      "sex_int",
+      "cabin_is_null",
+      "pclass",
+      "pclass_target_encoding_mean",
+      "name_titles__mr", 
+      "name_titles__miss", 
+      "name_titles__mrs", 
+      "name_titles__master", 
+      "name_titles__rev",
+      "name_titles__sir",
+      "name_titles__lady",
+      "name_titles__dr",
+      "embarked__c",
+      "embarked__q",
+      "embarked__s"
+    ],
+    "categorical": []
+  },
+  "model": {
+    "name": "catboostClassifier",
+    "model_params": {
+      "eval_metric": "Accuracy",
+      "learning_rate": 0.1,
+      "depth": 10
+    },
+    "train_params": {
+      "num_boost_round": 350,
+      "verbose_eval": false
+    }
+  },
+  "dataset": {
+    "train_table": "train",
+    "test_table": "test"
+  },
+  "cv": {
+    "n_splits": 5,
+    "random_state": 42
+  }
+}
